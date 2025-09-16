@@ -27,7 +27,12 @@
       property="og:description"
       content="꾸준히 성장하는 백엔드 개발자 [김개발]의 포트폴리오입니다. 안정적인 시스템과 더 나은 사용자 가치를 만들기 위한 열정과 고민을 담았습니다."
     />
-    <meta property="og:image" content="" />
+    <!-- https://{github계정명}.github.io/레포지토리명/preview.png -->
+    <!-- https://kimjava911.github.io/250916_CSS2/preview.png -->
+    <meta
+      property="og:image"
+      content="https://kimjava911.github.io/250916_CSS2/preview.png"
+    />
     <style>
       /* 폰트 */
       /* https://noonnu.cc/ */
@@ -165,10 +170,25 @@
       }
 
       /* 레이아웃 : 박스모델, 플렉스 */
+      body {
+        display: flex;
+        gap: 24px;
+        flex-direction: column;
+        /* 위에서 아래 방향으로 쌓아서 처리 */
+      }
       body > section {
         /* body에 바로 속한 section */
         /* 자식 선택 -> 바로 속한 경우 */
-        padding: 24px;
+        /* https://getbootstrap.com/docs/5.3/layout/breakpoints/#available-breakpoints */
+        /* padding: 24px; */
+        padding: 0 24px;
+        max-width: 576px;
+        width: 100%;
+        margin: auto;
+      }
+
+      h2 {
+        margin-top: 0; /* top, left, right, bottom */
       }
 
       #intro .title {
@@ -207,6 +227,21 @@
         padding: 8px;
         background-color: white;
         border-radius: 50%;
+      }
+
+      #portfoilio .box > div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      #portfoilio .item {
+        background-color: #3b0270;
+        width: 100%;
+        height: 160px;
+        border-radius: 8px;
+        border: 1px #fff1f1 solid;
+        padding: 0 16px;
       }
     </style>
   </head>
@@ -255,5 +290,36 @@
       </section>
     </section>
     <!-- 포트폴리오 (3종) -->
+    <section id="portfoilio">
+      <section class="box">
+        <h2>📚 포트폴리오</h2>
+        <div>
+          <div class="item">
+            <h3>여행 추천 프로젝트</h3>
+            <p>
+              사용자 맞춤형 여행지를 추천하는 API 서버를 개발했습니다. Spring
+              Boot를 기반으로 RESTful API를 설계하고, MySQL을 사용하여 여행지
+              데이터를 효율적으로 관리했습니다.
+            </p>
+          </div>
+          <div class="item">
+            <h3>재능 매칭 프로젝트</h3>
+            <p>
+              사용자 간 재능을 교환하고 거래할 수 있는 플랫폼의 백엔드 시스템을
+              구축했습니다. 실시간 채팅 기능을 구현하고, 안전한 거래를 위한 인증
+              및 권한 관리 로직을 설계했습니다.
+            </p>
+          </div>
+          <div class="item">
+            <h3>AWS 인프라 프로젝트</h3>
+            <p>
+              안정적이고 확장성 있는 서비스 운영을 위해 AWS 클라우드 환경에
+              인프라를 구축했습니다. EC2, RDS, S3 등 주요 서비스를 활용하여
+              애플리케이션을 배포하고 모니터링했습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </section>
   </body>
 </html>
