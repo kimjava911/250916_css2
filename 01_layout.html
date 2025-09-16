@@ -165,7 +165,9 @@
       }
 
       /* 레이아웃 : 박스모델, 플렉스 */
-      #intro {
+      body > section {
+        /* body에 바로 속한 section */
+        /* 자식 선택 -> 바로 속한 경우 */
         padding: 24px;
       }
 
@@ -176,6 +178,35 @@
       #intro div {
         line-height: 1.6;
         /* 1 : 100% */
+      }
+
+      #tech-stack ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      #tech-stack li {
+        list-style: none;
+        width: 128px;
+        aspect-ratio: 1; /* 가로/세로 */
+        background-color: #3b0270;
+        border-radius: 8px;
+        border: 1px transparent solid;
+        padding: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #tech-stack img {
+        width: 80%;
+        padding: 8px;
+        background-color: white;
+        border-radius: 50%;
       }
     </style>
   </head>
@@ -198,7 +229,31 @@
 
     <!-- flex 기반 레이아웃. svg repo. -->
     <!-- 기술 스택 (부트캠프) -->
-
+    <!-- https://www.svgrepo.com/ -->
+    <!-- https://icons8.com/ -->
+    <section id="tech-stack">
+      <section class="box">
+        <!-- https://emojipedia.org/ -->
+        <h2>💻 기술 스택</h2>
+        <ul>
+          <li>
+            <img src="img/java.png" alt="JAVA" />
+          </li>
+          <li>
+            <img src="img/spring.png" alt="SPRING" />
+          </li>
+          <li>
+            <img src="img/mysql.png" alt="MYSQL" />
+          </li>
+          <li>
+            <img src="img/aws.png" alt="AWS" />
+          </li>
+          <li>
+            <img src="img/github.png" alt="GITHUB" />
+          </li>
+        </ul>
+      </section>
+    </section>
     <!-- 포트폴리오 (3종) -->
   </body>
 </html>
